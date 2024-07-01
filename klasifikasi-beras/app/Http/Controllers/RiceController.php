@@ -27,7 +27,7 @@ class RiceController extends Controller
             $predicted_class = $response->json()['predicted_class'];
 
             // Mappingkan predicted_class ke nama jenis beras
-            $rice_types = ['Beras 1', 'Beras 2', 'Beras 3', 'Beras 4', 'Beras 5'];
+            $rice_types = ['Beras Arborio', 'Beras Basmati', 'Beras Ipsala', 'Beras Jasmine', 'Beras Karacadag'];
             $result = $rice_types[$predicted_class];
 
             // Tampilkan hasil ke view
