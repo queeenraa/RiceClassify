@@ -6,6 +6,21 @@
     <title>Hasil Klasifikasi</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+        .gambar-beras {
+            max-width: 100%;
+            height: auto;
+        }
+        .gambar-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .gambar-container img {
+            max-width: 30%;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
     <div class="container mt-5">
@@ -13,6 +28,11 @@
             <div class="card-body text-center">
                 <h1 class="card-title">Hasil Klasifikasi</h1>
                 <p class="card-text">Jenis Beras: {{ $result }}</p>
+                <div class="gambar-container">
+                    <img src="{{ asset('images/beras_' . strtolower($result) . '_1.jpeg') }}" class="img-fluid gambar-beras" alt="Beras {{ $result }} 1">
+                    <img src="{{ asset('images/beras_' . strtolower($result) . '_2.jpeg') }}" class="img-fluid gambar-beras" alt="Beras {{ $result }} 2">
+                    <img src="{{ asset('images/beras_' . strtolower($result) . '_3.jpeg') }}" class="img-fluid gambar-beras" alt="Beras {{ $result }} 3">
+                </div>
                 <a href="/upload" class="btn btn-primary">Klasifikasi Lagi</a>
             </div>
         </div>

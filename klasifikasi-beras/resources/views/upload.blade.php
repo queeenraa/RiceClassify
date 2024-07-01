@@ -6,16 +6,24 @@
     <title>Klasifikasi Beras</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+        .card-img-top {
+            width: 100%;
+            height: auto;
+            max-height: 350px; /* Atur ukuran maksimal gambar di sini */
+            object-fit: cover; /* Agar gambar tetap proporsional */
+        }
+    </style>
 </head>
 <body class="bg-light">
     <div class="container">
         <div class="row justify-content-center mt-5">
             <div class="col-md-6">
                 <div class="card mb-3">
-                    <img src="{{ asset('images/beras.png') }}" class="card-img-top" alt="Beras">
+                    <img src="{{ asset('images/beras.png') }}" class="card-img-top img-fluid" alt="Beras">
                     <div class="card-body">
-                      <h5 class="card-title">RiceClassify</h5>
-                      <p class="card-text">Upload gambar beras Anda untuk dilakukan klasifikasi jenis beras.</p>
+                      <h4 class="card-title text-center">RiceClassify</h4>
+                      <p class="card-text text-center">Upload gambar beras Anda untuk dilakukan klasifikasi jenis beras.</p>
                       <form action="/upload" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="custom-file">
